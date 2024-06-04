@@ -1,0 +1,45 @@
+1- Faça um programa usando o do-while + switch-case para criar um menu com as questões da lista:
+
+a) Escreva um programa que leia a idade de um grupo de pessoas e calcule a média de idade. O programa deve parar de ler as idades quando for digitada uma idade negativa. Use o laço while.
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int a, b = 0, c = 0,d;
+    float media;
+
+    do {
+        printf("MENU:\n");
+        printf("Digite 1 para adicionar uma idade.\n");
+        printf("Digite 2 para calcular a media das idades.\n");
+        printf("Digite 3 para sair.\n");
+        scanf("%d", &d);
+            switch(d) {
+                case 1:
+                printf("\n\nDigite a idade ou um numero negativo para voltar ao menu.\n");
+                scanf("%d", &a);
+                    if(a >= 0) {
+                    b += a;
+                    c++;
+                    } else {
+                    printf("Voltando ao menu.\n\n\n");
+                }
+                break;
+                case 2:
+                    if(c == 0) {
+                    printf("Nenhuma idade.\n\n\n");
+                    } else {
+                    media = (float)b / c;
+                    printf("A media de todas as idades e: %.2f de idade.\n\n\n", media);
+                }
+                break;
+                case 3:
+                printf("FIM.\n");
+                exit(0);
+                    default:
+                printf("Erro. Tente novamente.\n");
+}
+        } while(1);
+    return 0;
+}
