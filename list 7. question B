@@ -1,0 +1,42 @@
+1- Faça um programa usando o do-while + switch-case para criar um menu com as questões da lista:
+
+b) Escreva um programa que leia um número inteiro do usuário e imprima a sequência de Fibonacci até esse número. Use o laço while.
+
+#include <stdio.h>
+
+int main() {
+    int opcao, numero, a = 0, b = 1, c;
+
+    do {
+        printf("\n\nMENU:\n\n");
+        printf("Tecle 1 para imprimir a sequencia de Fibonacci.\n");
+        printf("Tecle 2 para Sair.\n");
+        printf("Escolha uma opcao:\n ");
+        scanf("%d", &opcao);
+
+        switch (opcao) {
+            case 1:
+                printf("\n\nDigite um numero inteiro para imprimir a sequencia de Fibonacci ate o seu numero:\n\n");
+                scanf("%d", &numero);
+                    a = 0;
+                    b = 1;
+                printf("\n\nSequencia de Fibonacci para %d:\n\n", numero);
+                printf("%d, %d, ", a, b);
+                    c = a + b;
+                while (c <= numero) {
+                    printf("%d, ", c);
+                        a = b;
+                        b = c;
+                        c = a + b;
+}
+                    printf("\n");
+                break;
+            case 2:
+                    printf("\n\nFIM.\n");
+                break;
+            default:
+                    printf("\n\nErro. Tente novamente.\n\n");
+}
+        } while (opcao != 2);
+    return 0;
+}
